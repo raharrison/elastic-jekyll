@@ -23,23 +23,3 @@ def index_posts(es, posts):
 
         es.index(index=index_name, doc_type=doc_type, id=post.id, body=doc)
         print("Created doc for " + post.url)
-
-
-# POST /blog/post/_search
-# {
-#     "query": {
-#       "multi_match": {
-#         "query": "python",
-#         "type": "best_fields",
-#         "fuzziness": "AUTO",
-#         "tie_breaker": 0.3,
-#         "fields": ["title^3", "body"]
-#       }
-#     },
-#     "highlight": {
-#         "fields" : {
-#             "body" : {}
-#         }
-#     },
-#     "_source": ["title", "url"]
-# }
