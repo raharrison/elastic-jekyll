@@ -31,6 +31,7 @@ def parse_post(path):
 def create_posts(base_dir):
     paths = find_post_paths(base_dir)
     for path in paths:
+        id = path.replace(base_dir, "").replace("/", "-")
         url = path.replace(base_dir, "")
         (title, body) = parse_post(path)
-        yield Post(title, url, body)
+        yield Post(id, title, url, body)
