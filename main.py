@@ -6,7 +6,7 @@ base_dir = "~/blog/_site"
 
 if __name__ == "__main__":
     # provide blog base directory as arg
-    if len(sys.argv) > 0:
+    if len(sys.argv) > 1:
         base_dir = str(sys.argv[1])
 
     print("Finding posts in %s" % base_dir)
